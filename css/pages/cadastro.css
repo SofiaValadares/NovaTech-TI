@@ -11,4 +11,27 @@
         align-items: center;
         width: 50%;
     }
+
+    .campos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+
+        .buttons-grup {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: var(--spacing-sm);
+
+            .limpar {
+                background: #9e0405;
+            }
+
+            .limpar:hover {
+                background: #da1011;
+            }
+        }
+    }
 }
