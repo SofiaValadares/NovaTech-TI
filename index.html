@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/pages/home.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://www.youtube.com/iframe_api"></script>
 </head>
 <body>
     <div id="header-container"></div>
@@ -55,7 +56,13 @@
 
 
             <div class="media">
-                <iframe src="https://www.youtube.com/embed/8Wx0uR1_ajo" title="YouTube video player"  allowfullscreen></iframe>
+                <div class="video-container">
+                    <div id="youtubePlayer"></div>
+                    <button id="unmuteBtn" class="unmute-button" aria-label="Ativar som do vídeo">
+                        <span class="material-icons">volume_up</span>
+                        Ativar Som
+                    </button>
+                </div>
             </div>
         </section>
 

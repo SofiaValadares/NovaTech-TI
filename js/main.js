@@ -122,6 +122,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     adjustHeaderLinks();
     initCarousel(); // inicia o carrossel
+
+    // Aguardar a API do YouTube carregar antes de inicializar o player
+    if (typeof YT !== 'undefined' && YT.Player) {
+        initVideoSoundControl();
+    } else {
+        // Se a API ainda não carregou, esperar pelo evento
+        window.onYouTubeIframeAPIReady = function() {
+            initVideoSoundControl();
+        };
+    }
 });
 
 function adjustHeaderLinks() {
@@ -152,4 +162,50 @@ function adjustHeaderLinks() {
         if (solicitacaoLink) solicitacaoLink.style.display = 'none';
         if (logoutLink) logoutLink.style.display = 'none';
     }
+}
+
+/**
+ * Inicializa o controle de som do vídeo do YouTube
+ * Permite ao usuário ativar o som clicando no botão
+ */
+let youtubePlayer;
+
+function initVideoSoundControl() {
+    const unmuteBtn = document.getElementById('unmuteBtn');
+
+    if (!unmuteBtn) return;
+
+    // Criar player do YouTube usando a API
+    youtubePlayer = new YT.Player('youtubePlayer', {
+        videoId: 'l8DOoqFqq4A',
+        playerVars: {
+            autoplay: 1,
+            mute: 1,
+            controls: 0,
+            modestbranding: 1,
+            rel: 0,
+            showinfo: 0,
+            fs: 0,
+            cc_load_policy: 0,
+            iv_load_policy: 3,
+            autohide: 0
+        },
+        events: {
+            onReady: function(event) {
+                // Player está pronto, autoplay já iniciou mutado
+                console.log('YouTube player ready');
+            },
+            onStateChange: function(event) {
+                // Opcional: lidar com mudanças de estado
+            }
+        }
+    });
+
+    unmuteBtn.addEventListener('click', () => {
+        if (youtubePlayer && youtubePlayer.unMute) {
+            youtubePlayer.unMute();
+            unmuteBtn.classList.add('hidden');
+            console.log('Som do vídeo ativado!');
+        }
+    });
 }
