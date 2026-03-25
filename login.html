@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<!-- ============================================================================
+     PÁGINA: LOGIN
+     ============================================================================
+     Página pública - acessível sem autenticação
+     Autenticar usuário no sistema
+     ============================================================================ -->
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -18,35 +24,36 @@
             <h1>LOGIN DE CLIENTES</h1>
         </section>
 
-        <section class="campos">
+        <section class="campos" role="form" aria-label="Formulário de login">
             <div class="input-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Digite seu email">
+                <input type="email" id="email" placeholder="Digite seu email" aria-required="true" aria-describedby="email-help">
+                <small id="email-help" style="display:none;">Digite um email válido (ex: usuario@exemplo.com)</small>
             </div>
 
             <div class="input-group">
                 <label for="senha">Senha</label>
-                <input type="password" id="senha" placeholder="Digite sua senha">
+                <input type="password" id="senha" placeholder="Digite sua senha" aria-required="true">
             </div>
 
             <div class="buttons-grup">
-                <button id="btn-login">Realizar Login</button>
-                <button class="limpar" id="btn-limpar">Limpar</button>
+                <button id="btn-login" aria-label="Botão para realizar login">Realizar Login</button>
+                <button class="limpar" id="btn-limpar" aria-label="Botão para limpar os campos do formulário">Limpar</button>
             </div>
 
-            <div id="login-message" class="login-message" role="alert" aria-live="polite"></div>
+            <div id="login-message" class="login-message" role="alert" aria-live="polite" aria-label="Mensagens do sistema"></div>
         </section>
 
         <section class="links">
-            <nav>
-                <a href="trocarsenha.html">
-                    <span class="material-icons">arrow_forward</span>
+            <nav aria-label="Links de suporte">
+                <a href="trocarsenha.html" aria-label="Ir para página de recuperação de senha">
+                    <span class="material-icons" aria-hidden="true">arrow_forward</span>
                     Recuperar senha
                 </a>
 
-                <a href="cadastro.html">
-                    <span class="material-icons">arrow_forward</span>
-                    Relizar cadastro
+                <a href="cadastro.html" aria-label="Ir para página de cadastro">
+                    <span class="material-icons" aria-hidden="true">arrow_forward</span>
+                    Realizar cadastro
                 </a>
             </nav>
         </section>
@@ -55,7 +62,6 @@
 
     <div id="footer-container"></div>
 
-    <script src="js/auth.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/main.js"></script>
     <script src="js/pages/login.js"></script>

@@ -1,12 +1,31 @@
+/**
+ * ============================================================================
+ *  MÓDULO DE LOGIN - NOVATECH TI
+ * ============================================================================
+ * Gerencia o formulário de login
+ * - Validação de email e senha
+ * - Autenticação de usuário
+ * - Mensagens de feedback
+ * - Redirecionamento após login
+ * ============================================================================
+ */
+
 (() => {
+    // ========== ELEMENTOS DO DOM ==========
     const emailInput = document.getElementById("email");
     const senhaInput = document.getElementById("senha");
     const btnLogin = document.getElementById("btn-login");
     const btnLimpar = document.getElementById("btn-limpar");
     const messageEl = document.getElementById("login-message");
 
+    // ========== REGEX PARA VALIDAÇÃO ==========
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+    /**
+     * Define mensagem de feedback para o usuário
+     * @param {string} text - Texto da mensagem
+     * @param {string} kind - Tipo: 'error' ou 'success'
+     */
     function setMessage(text, kind) {
         if (!messageEl) return;
         messageEl.textContent = text || "";

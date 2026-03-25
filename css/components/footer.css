@@ -1,5 +1,14 @@
-/* Footer Component Styles */
+/**
+ * ============================================================================
+ *  ESTILOS DO FOOTER - NOVATECH TI
+ * ============================================================================
+ * Define a aparência e comportamento do componente de rodapé
+ * Inclui: contatos, endereço e métodos de pagamento
+ * ============================================================================
+ */
 
+/* ========== CONTAINER PRINCIPAL DO FOOTER ========== */
+/* Fundo escuro com espaçamento adequado */
 .footer {
     background: var(--background-dark);
     color: var(--text-light);

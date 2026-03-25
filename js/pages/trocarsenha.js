@@ -1,15 +1,32 @@
+/**
+ * ============================================================================
+ *  MÓDULO DE TROCA DE SENHA - NOVATECH TI
+ * ============================================================================
+ * Gerencia o formulário de mudança de senha
+ * - Validação de email
+ * - Validação de senha com requisitos específicos
+ * - Confirmação de nova senha
+ * - Atualização de senha no sistema
+ * ============================================================================
+ */
+
 (() => {
+    // ========== ELEMENTOS DO DOM ==========
     const emailInput = document.getElementById("email");
     const senhaInput = document.getElementById("senha");
     const senhaConfirmarInput = document.getElementById("senha-confirmar");
 
+    // ========== BOTÕES DE AÇÃO ==========
     const btnTrocar = document.getElementById("btn-password");
     const btnLimpar = document.getElementById("btn-limpar");
 
+    // ========== ELEMENTO DE MENSAGENS ==========
     const messageEl = document.getElementById("trocarsenha-message");
 
+    // ========== REGEX PARA VALIDAÇÃO ==========
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+    // ========== CARACTERES ESPECIAIS PERMITIDOS E PROIBIDOS ==========
     const allowedSpecialRegex = /[@#$%&*!?\/\\|_\-\+\.=]/;
     // caracteres não permitidos na senha (lista do PDF)
     const disallowedSpecialRegex = /[¨{}[\]´`~^:;<>,"“‘]/;

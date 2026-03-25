@@ -1,5 +1,14 @@
-/* Header Component Styles */
+/**
+ * ============================================================================
+ *  ESTILOS DO HEADER - NOVATECH TI
+ * ============================================================================
+ * Define a aparência e comportamento do componente de cabeçalho
+ * Inclui: logo, título, navegação e botões
+ * ============================================================================
+ */
 
+/* ========== CONTAINER PRINCIPAL DO HEADER ========== */
+/* Flexbox layout para distribuição de elementos */
 .header {
     background: var(--background-dark);
     color: var(--text-light);

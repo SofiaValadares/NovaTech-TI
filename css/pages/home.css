@@ -1,3 +1,15 @@
+/**
+ * ============================================================================
+ *  ESTILOS DA PÁGINA HOME - NOVATECH TI
+ * ============================================================================
+ * Define visuals para a página inicial
+ * - Seção de título e apresentação
+ * - Seção de histórico (imagens + vídeo)
+ * - Seção de serviços com carrossel
+ * - Responsividade para mobile/tablet
+ * ============================================================================
+ */
+
 .home {
     display: flex;
     flex-direction: column;

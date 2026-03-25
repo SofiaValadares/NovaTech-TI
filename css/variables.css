@@ -1,3 +1,12 @@
+/**
+ * ============================================================================
+ *  VARIÁVEIS CSS GLOBAIS - NOVATECH TI
+ * ============================================================================
+ * Define todas as cores, espaçamentos e tipografia do projeto
+ * Mantém consistência visual em todo o aplicativo
+ * ============================================================================
+ */
+
 :root {
     /* 🎨 BACKGROUNDS */
     --background: #FFFFFF;
@@ -41,4 +50,19 @@
 
     /* ⚡ TRANSIÇÕES */
     --transition: 0.3s ease;
+
+    /* 🎯 ESTADOS DE INPUT */
+    --input-focus-shadow: 0 0 0 2px rgba(30, 58, 95, 0.2);
+    --input-error-color: #da1011;
+    --input-success-color: #0b7a3b;
+    --input-disabled-opacity: 0.7;
+
+    /* 📐 BORDER RADIUS VARIAÇÕES */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+
+    /* ✋ HOVER/ACTIVE STATES */
+    --opacity-hover: 0.8;
+    --opacity-active: 0.6;
 }

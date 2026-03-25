@@ -1,3 +1,16 @@
+/**
+ * ============================================================================
+ *  ESTILOS DA PÁGINA TROCAR SENHA - NOVATECH TI
+ * ============================================================================
+ * Define visuals para a página de troca de senha
+ * - Layout centralizado do formulário
+ * - Campos: Email, Senha, Confirmação
+ * - Requisitos de senha visíveis
+ * - Botões de ação
+ * - Responsividade mobile-first
+ * ============================================================================
+ */
+
 .trocarsenha {
     display: flex;
     flex-direction: column;
@@ -9,14 +22,18 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 50%;
+        width: 100%;
+        max-width: 500px;
+        padding: 0 var(--spacing-md);
     }
 
     .campos {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 50%;
+        width: 100%;
+        max-width: 500px;
+        padding: 0 var(--spacing-md);
 
         .buttons-grup {
             display: flex;
@@ -24,6 +41,12 @@
             justify-content: center;
             align-items: center;
             gap: var(--spacing-sm);
+            flex-wrap: wrap;
+
+            button {
+                flex: 1;
+                min-width: 120px;
+            }
 
             .limpar {
                 background: #9e0405;
@@ -51,6 +74,46 @@
 
         output {
             margin-bottom: var(--spacing-sm);
+        }
+    }
+}
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+    .trocarsenha {
+        .title,
+        .campos {
+            width: 95%;
+            max-width: 100%;
+            padding: 0 var(--spacing-sm);
+        }
+
+        .campos .buttons-grup button {
+            min-width: 100px;
+        }
+    }
+}
+
+/* Responsividade para mobile */
+@media (max-width: 480px) {
+    .trocarsenha {
+        margin-top: var(--spacing-md);
+
+        .title h1 {
+            font-size: 1.5rem;
+        }
+
+        .campos .buttons-grup {
+            flex-direction: column;
+            gap: var(--spacing-xs);
+        }
+
+        .campos .buttons-grup button {
+            width: 100%;
+        }
+
+        output {
+            font-size: 0.9rem;
         }
     }
 }

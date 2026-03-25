@@ -1,26 +1,41 @@
-<header class="header">
-    <img src="assets/logo/logo03.png" class="logo" alt="logo">
+<!-- ========== COMPONENTE HEADER ========== -->
+<!-- Navegação principal do site -->
+<header class="header" role="banner">
+    <!-- Logo da empresa com link para home -->
+    <a href="index.html" aria-label="Logo NovaTech - voltar para home">
+        <img src="assets/logo/logo03.png" class="logo" alt="Logo NovaTech TI">
+    </a>
 
+    <!-- Título principal -->
     <h1>Soluções Inteligentes em TI</h1>
-    <nav>
-        <a href="index.html">
-            <span class="material-icons">home</span>
+    
+    <!-- Menu de navegação -->
+    <nav aria-label="Menu de navegação principal">
+        <!-- Link para home -->
+        <a href="index.html" aria-label="Ir para página inicial">
+            <span class="material-icons" aria-hidden="true">home</span>
             Home
         </a>
 
-        <a href="login.html">
-            <span class="material-icons">login</span>
+        <!-- Link de login -->
+        <a href="login.html" aria-label="Ir para página de login">
+            <span class="material-icons" aria-hidden="true">login</span>
             Login
         </a>
 
-        <a href="cadastro.html">
-            <span class="material-icons">person_add</span>
+        <!-- Link de cadastro -->
+        <a href="cadastro.html" aria-label="Ir para página de cadastro">
+            <span class="material-icons" aria-hidden="true">person_add</span>
             Cadastro
         </a>
 
-        <a href="servicos.html" id="solicitacao-link" style="display: none;">
-            <span class="material-icons">engineering</span>
+        <!-- Link de solicitações (visível apenas quando logado) -->
+        <a href="servicos.html" id="solicitacao-link" style="display: none;" aria-label="Ir para página de solicitação de serviços">
+            <span class="material-icons" aria-hidden="true">engineering</span>
             Solicitar Serviços
         </a>
+        
+        <!-- Logout link (adicionado dinamicamente) -->
+        <!-- ID: logout-link -->
     </nav>
 </header>

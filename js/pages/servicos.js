@@ -1,4 +1,17 @@
+/**
+ * ============================================================================
+ *  MÓDULO DE SOLICITAÇÕES DE SERVIÇO - NOVATECH TI
+ * ============================================================================
+ * Gerencia solicitações de serviço por usuários autenticados
+ * - Exibição de informações do usuário
+ * - Cálculo dinâmico de preços e prazos
+ * - Adição e remoção de solicitações
+ * - Formatação de datas e valores monetários
+ * ============================================================================
+ */
+
 (() => {
+    // ========== ELEMENTOS DO DOM - SELETORES E INPUTS ==========
     const serviceSelect = document.getElementById('service-select');
     const servicePriceOutput = document.getElementById('service-price');
     const serviceDeadlineOutput = document.getElementById('service-deadline');
@@ -6,10 +19,20 @@
     const serviceStatusOutput = document.getElementById('service-status');
     const btnAddRequest = document.getElementById('btn-add-request');
     const requestsTable = document.getElementById('requests-tbody');
+    
+    // ========== ELEMENTOS DE INFORMAÇÕES DO USUÁRIO ==========
     const userNameOutput = document.getElementById('user-name');
     const userEmailOutput = document.getElementById('user-email');
+    
+    // ========== ELEMENTO DE MENSAGENS ==========
     const messageEl = document.getElementById('servicos-message');
 
+    // ========== BASE DE DADOS DE SERVIÇOS ==========
+    /* Cada serviço contém:
+       - name: Nome do serviço
+       - price: Preço em reais
+       - deadline: Prazo em dias
+    */
     const services = {
         suporte: { name: 'Suporte Técnico', price: 150, deadline: 1 },
         desenvolvimento: { name: 'Desenvolvimento de Sistemas', price: 2500, deadline: 14 },

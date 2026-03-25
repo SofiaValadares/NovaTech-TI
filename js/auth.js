@@ -1,7 +1,23 @@
-﻿(function(window){
+﻿/**
+ * ============================================================================
+ *  MÓDULO DE AUTENTICAÇÃO - NOVATECH TI
+ * ============================================================================
+ * Gerencia todo o sistema de autenticação do aplicativo
+ * - Registro de novos usuários
+ * - Login/Logout
+ * - Alteração de senha
+ * - Proteção de rotas
+ * - Persistência de dados em localStorage
+ * ============================================================================
+ */
+
+(function(window){
+    // ========== CONSTANTES DE ARMAZENAMENTO ==========
     const STORAGE_USERS = 'novatech_users';
     const STORAGE_CURRENT = 'novatech_current_user';
 
+    // ========== USUÁRIO PADRÃO PARA TESTES ==========
+    // Email: admin@novatech.com | Senha: Admin@123
     const DEFAULT_USER = {
         nome: 'Usuário Padrão',
         email: 'admin@novatech.com',

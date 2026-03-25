@@ -1,3 +1,17 @@
+/**
+ * ============================================================================
+ *  ESTILOS DA PÁGINA CADASTRO - NOVATECH TI
+ * ============================================================================
+ * Define visuals para a página de cadastro
+ * - Grid layout com 2 colunas para formulário
+ * - Grupos de input com labels
+ * - Estilo para radio buttons (estado civil)
+ * - Botões de ação
+ * - Mensagens de validação
+ * - Responsividade mobile-first
+ * ============================================================================
+ */
+
 .cadastro {
     display: flex;
     flex-direction: column;
@@ -9,14 +23,18 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 50%;
+        width: 100%;
+        max-width: 600px;
+        padding: 0 var(--spacing-md);
     }
 
     .campos {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 50%;
+        width: 100%;
+        max-width: 600px;
+        padding: 0 var(--spacing-md);
 
         .buttons-grup {
             display: flex;
@@ -24,6 +42,12 @@
             justify-content: center;
             align-items: center;
             gap: var(--spacing-sm);
+            flex-wrap: wrap;
+
+            button {
+                flex: 1;
+                min-width: 100px;
+            }
 
             .limpar {
                 background: #9e0405;
@@ -86,6 +110,46 @@
             background: var(--background-secondary);
             color: var(--text);
             font-size: 14px;
+        }
+    }
+}
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+    .cadastro {
+        .title,
+        .campos {
+            width: 95%;
+            max-width: 100%;
+            padding: 0 var(--spacing-sm);
+        }
+
+        .campos .buttons-grup button {
+            min-width: 80px;
+        }
+    }
+}
+
+/* Responsividade para mobile */
+@media (max-width: 480px) {
+    .cadastro {
+        margin-top: var(--spacing-md);
+
+        .title h1 {
+            font-size: 1.3rem;
+        }
+
+        .campos .buttons-grup {
+            flex-direction: column;
+            gap: var(--spacing-xs);
+        }
+
+        .campos .buttons-grup button {
+            width: 100%;
+        }
+
+        .radio-option {
+            margin-bottom: var(--spacing-xs);
         }
     }
 }
