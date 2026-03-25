@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Solicitação de Serviços - NovaTech TI</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/pages/servicos.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <main class="servicos">
+        <section class="title">
+            <h1>Solicitação de Serviços de TI</h1>
+        </section>
+
+        <section class="user-info">
+            <h2>Informações do Usuário</h2>
+            <div class="info-group">
+                <span class="info-label">Nome:</span>
+                <output id="user-name">João Silva</output>
+            </div>
+            <div class="info-group">
+                <span class="info-label">Email (Login):</span>
+                <output id="user-email">joao.silva@email.com</output>
+            </div>
+        </section>
+
+        <section class="requests-history">
+            <h2>Solicitações Anteriores</h2>
+            <table class="requests-table">
+                <thead>
+                    <tr>
+                        <th>Data do Pedido</th>
+                        <th>Nº Solicitação</th>
+                        <th>Serviço</th>
+                        <th>Status</th>
+                        <th>Preço</th>
+                        <th>Data Prevista</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="requests-tbody">
+                    <tr>
+                        <td>15/01/2026</td>
+                        <td>001</td>
+                        <td>Suporte Técnico</td>
+                        <td>Concluído</td>
+                        <td>R$ 150,00</td>
+                        <td>20/01/2026</td>
+                        <td><button class="btn-delete" data-row="1">Deletar</button></td>
+                    </tr>
+                    <tr>
+                        <td>10/02/2026</td>
+                        <td>002</td>
+                        <td>Desenvolvimento de Sistemas</td>
+                        <td>Em andamento</td>
+                        <td>R$ 2.500,00</td>
+                        <td>28/02/2026</td>
+                        <td><button class="btn-delete" data-row="2">Deletar</button></td>
+                    </tr>
+                    <tr>
+                        <td>01/03/2026</td>
+                        <td>003</td>
+                        <td>Consultoria em TI</td>
+                        <td>Aprovado</td>
+                        <td>R$ 800,00</td>
+                        <td>10/03/2026</td>
+                        <td><button class="btn-delete" data-row="3">Deletar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="new-request">
+            <h2>Nova Solicitação de Serviço</h2>
+            <div class="request-form">
+                <div class="form-group">
+                    <label for="service-select">Serviço de TI:</label>
+                    <select id="service-select">
+                        <option value="">-- Selecione um serviço --</option>
+                        <option value="suporte">Suporte Técnico</option>
+                        <option value="desenvolvimento">Desenvolvimento de Sistemas</option>
+                        <option value="consultoria">Consultoria em TI</option>
+                        <option value="manutencao">Manutenção Preventiva</option>
+                        <option value="seguranca">Segurança da Informação</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="service-price">Preço:</label>
+                    <output id="service-price">R$ 0,00</output>
+                </div>
+
+                <div class="form-group">
+                    <label for="service-deadline">Prazo de Atendimento:</label>
+                    <output id="service-deadline">-- dias</output>
+                </div>
+
+                <div class="form-group">
+                    <label for="service-date">Data Prevista de Atendimento:</label>
+                    <output id="service-date">--/--/----</output>
+                </div>
+
+                <div class="form-group">
+                    <label for="service-status">Status:</label>
+                    <output id="service-status">EM ELABORAÇÃO</output>
+                </div>
+
+                <button id="btn-add-request" class="btn-primary">Incluir Solicitação</button>
+            </div>
+        </section>
+
+        <div id="servicos-message" class="servicos-message" role="alert" aria-live="polite"></div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/pages/servicos.js"></script>
+</body>
+</html>
