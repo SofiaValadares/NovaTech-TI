@@ -12,12 +12,10 @@
 
 ### ✨ Principais Características
 
-- ✅ **Sistema de Autenticação Completo** - Login, cadastro e troca de senha
 - ✅ **Gerenciamento de Solicitações** - Criar, visualizar e deletar solicitações de serviço
 - ✅ **Persistência de Dados** - Armazenamento local com localStorage
 - ✅ **Interface Responsiva** - Design adaptável para diferentes tamanhos de tela
 - ✅ **Design Moderno** - Componentes reutilizáveis e estilos padronizados
-- ✅ **Segurança Básica** - Hash de senhas com btoa() e proteção de rotas
 
 ---
 
@@ -217,11 +215,6 @@ Página -> Verifica isLoggedIn() -> Não? -> Redireciona para login.html
 - **localStorage** - Persistência local
 - **JSON** - Serialização de dados
 
-### Segurança (Básica)
-- **btoa()** - Hash de senhas em Base64
-- **Input validation** - Validação no cliente
-- **Route guarding** - Proteção de rotas
-
 ---
 
 ## 📱 Responsividade
@@ -400,52 +393,11 @@ index.html (Home)
 │
 trocarsenha.html (Sempre acessível)
 └── Usuários logados ou não logados
-```
-
----
-
-## 🔒 Segurança
-
-⚠️ **Nota Importante**: Este é um projeto educacional. Para produção:
-
-- Use hashing apropriado (bcrypt, Argon2)
-- Implemente HTTPS
-- Use backend seguro para autenticação
-- Valide no servidor (não apenas cliente)
-- Implemente CSRF protection
-- Use JWT ou session cookies
-
----
-
-## 📞 Contato e Suporte
-
-**NovaTech TI**
-- 📧 Email: contato@novatech.com
-- 📱 WhatsApp: (11) 91234-5678
-- 📍 Endereço: São Paulo, SP - Brasil
-
 ---
 
 ## 📄 Licença
 
 Este projeto é fornecido como está para fins educacionais.
-
----
-
-## ✅ Checklist de Implementação
-
-- ✅ 5 páginas HTML funcionais
-- ✅ Sistema de autenticação completo
-- ✅ Validação de formulários extensiva
-- ✅ Gerenciamento de solicitações de serviço
-- ✅ Componentes reutilizáveis (header, footer)
-- ✅ CSS modularizado e organizado
-- ✅ Variáveis CSS para tema consistente
-- ✅ localStorage para persistência
-- ✅ Design responsivo
-- ✅ Material Icons para UI
-- ✅ Comentários em todo o código
-- ✅ README completo
 
 ---
 
