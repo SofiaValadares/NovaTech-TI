@@ -38,6 +38,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     await loadComponent("header-container", "components/header.html");
     await loadComponent("footer-container", "components/footer.html");
 
+    if (window.Auth) {
+        window.Auth.ensureDefaultUser?.();
+        window.Auth.guardRoutes?.();
+        window.Auth.setupHeaderAuth?.(document.querySelector('.header nav'));
+    }
+
     adjustHeaderLinks();
     initCarousel(); // inicia o carrossel
 });
@@ -49,17 +55,22 @@ function adjustHeaderLinks() {
     const homeLink = nav.querySelector('a[href="index.html"]');
     const loginLink = nav.querySelector('a[href="login.html"]');
     const cadastroLink = nav.querySelector('a[href="cadastro.html"]');
+    const logoutLink = nav.querySelector('#logout-link');
 
     const currentPage = window.location.pathname.split('/').pop().toLowerCase();
     const isHome = !currentPage || currentPage === 'index.html';
 
-    if (isHome) {
-        if (homeLink) homeLink.style.display = 'none';
-        if (loginLink) loginLink.style.display = '';
-        if (cadastroLink) cadastroLink.style.display = '';
-    } else {
+    const logged = window.Auth?.isLoggedIn?.() || false;
+
+    if (logged) {
         if (homeLink) homeLink.style.display = '';
         if (loginLink) loginLink.style.display = 'none';
         if (cadastroLink) cadastroLink.style.display = 'none';
+        if (logoutLink) logoutLink.style.display = '';
+    } else {
+        if (homeLink) homeLink.style.display = isHome ? 'none' : '';
+        if (loginLink) loginLink.style.display = isHome ? '' : 'none';
+        if (cadastroLink) cadastroLink.style.display = isHome ? '' : 'none';
+        if (logoutLink) logoutLink.style.display = 'none';
     }
 }

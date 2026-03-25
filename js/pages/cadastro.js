@@ -323,9 +323,28 @@
             return;
         }
 
-        const successText = "Validação realizada com sucesso";
-        setMessage(successText, "success");
-        alert(successText);
+        const userData = {
+            nome: nomeInput.value.trim(),
+            cpf: cpfInput.value.trim(),
+            email: emailInput.value.trim(),
+            senha: senhaInput.value,
+            dataNascimento: dataNascimentoInput.value,
+            telefone: telefoneInput.value.trim(),
+            estadoCivil: getEstadoCivilSelecionado(),
+            escolaridade: escolaridadeSelect.value
+        };
+
+        const result = window.Auth?.registerUser?.(userData);
+        if (!result || !result.success) {
+            setMessage(result?.message || 'Falha no cadastro.', 'error');
+            alert(result?.message || 'Falha no cadastro.');
+            return;
+        }
+
+        setMessage(result.message, 'success');
+        alert(result.message);
+
+        window.location.href = 'index.html';
     }
 
     function handleBack() {

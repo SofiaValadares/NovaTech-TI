@@ -46,21 +46,21 @@
         if (!validate()) return;
 
         const email = emailInput.value.trim();
-        const successText = "Validação realizada com sucesso";
+        const senha = senhaInput.value;
+        const result = window.Auth?.authenticate?.(email, senha);
 
-        setMessage(successText, "success");
-        alert(successText);
-
-        // Guarda um estado simples para permitir navegações futuras.
-        try {
-            localStorage.setItem("isLoggedIn", "true");
-            localStorage.setItem("userEmail", email);
-        } catch {
-            // Se localStorage estiver indisponível, ainda assim cumpre a validação/fluxo da tela.
+        if (!result || !result.success) {
+            setMessage(result?.message || 'E-mail ou senha inválidos.', 'error');
+            return;
         }
 
-        // Navega para a página de conteúdo após o sucesso.
-        window.location.href = "index.html";
+        window.Auth?.login?.(email);
+
+        const successText = 'Login realizado com sucesso.';
+        setMessage(successText, 'success');
+        alert(successText);
+
+        window.location.href = 'index.html';
     }
 
     function handleClear() {

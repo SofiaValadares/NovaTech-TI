@@ -115,12 +115,19 @@
             return;
         }
 
-        const successText = "Validação realizada com sucesso";
-        setMessage(successText, "success");
-        alert(successText);
+        const email = emailInput.value.trim();
+        const password = senhaInput.value;
+        const changeResult = window.Auth?.changePassword?.(email, password);
+        if (!changeResult || !changeResult.success) {
+            setMessage(changeResult?.message || 'Erro ao trocar senha.', 'error');
+            alert(changeResult?.message || 'Erro ao trocar senha.');
+            return;
+        }
 
-        // Navega para a página anterior após sucesso.
-        window.history.back();
+        setMessage(changeResult.message, 'success');
+        alert(changeResult.message);
+
+        window.location.href = 'login.html';
     }
 
     function handleClear() {
