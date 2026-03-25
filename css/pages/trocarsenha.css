@@ -33,5 +33,24 @@
                 background: #da1011;
             }
         }
+
+        .trocarsenha-message {
+            margin-top: var(--spacing-sm);
+            text-align: center;
+            min-height: 1.2em;
+            font-weight: 600;
+        }
+
+        .trocarsenha-message[data-kind="error"] {
+            color: #da1011;
+        }
+
+        .trocarsenha-message[data-kind="success"] {
+            color: #0b7a3b;
+        }
+
+        output {
+            margin-bottom: var(--spacing-sm);
+        }
     }
 }

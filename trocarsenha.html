@@ -29,18 +29,37 @@
       </div>
 
       <div class="input-group">
-        <input type="password-confirm" id="senha-confirmar" placeholder="Confirme sua senha">
+        <input type="password" id="senha-confirmar" placeholder="Confirme sua senha">
+      </div>
+
+      <div class="input-group">
+        <output id="senha-instrucoes">
+          Regras para senha:
+          <br>
+          - Deve ter pelo menos 6 caracteres.
+          <br>
+          - Deve conter ao menos 1 número, 1 letra maiúscula e 1 caractere especial permitido:
+          <br>
+          <strong>@ # $ % &amp; * ! ? / \ | - _ + . =</strong>
+          <br>
+          - Não são permitidos os seguintes caracteres:
+          <br>
+          <strong>¨ { } [ ] ´ ` ~ ^ : ; &lt; &gt; , “ ‘</strong>
+        </output>
       </div>
 
       <div class="buttons-grup">
         <button id="btn-password">Trocar Senha</button>
         <button class="limpar" id="btn-limpar">Limpar</button>
       </div>
+
+      <div id="trocarsenha-message" class="trocarsenha-message" role="alert" aria-live="polite"></div>
     </section>
   </main>
 
   <div id="footer-container"></div>
 
   <script src="/js/main.js"></script>
+  <script src="/js/pages/trocarsenha.js"></script>
 </body>
 </html>
