@@ -1,0 +1,44 @@
+:root {
+    /* 🎨 BACKGROUNDS */
+    --background: #FFFFFF;
+    --background-secondary: #cccccc;
+    --background-dark: #1E3A5F;
+
+    /* 📝 TEXTOS */
+    --text: #333333;
+    --text-light: #FFFFFF;
+
+    /* 🎯 CORES PRINCIPAIS */
+    --primary: #1E3A5F;
+    --secondary: #4DA8DA;
+    --accent: #66D9E8;
+
+    /* 🔘 BOTÕES */
+    --button-bg: var(--primary);
+    --button-bg-hover: var(--secondary);
+    --button-text: #FFFFFF;
+
+    /* 🔲 BORDAS */
+    --border-color: #E0E0E0;
+    --border-radius: 8px;
+
+    /* 🌫️ SOMBRA */
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    /* 🔠 FONTES */
+    --font-main: 'Arial', sans-serif;
+    --font-title: 'Poppins', sans-serif;
+
+    /* 📏 ESPAÇAMENTOS */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+
+    /* 📐 TAMANHOS */
+    --container-width: 1200px;
+
+    /* ⚡ TRANSIÇÕES */
+    --transition: 0.3s ease;
+}

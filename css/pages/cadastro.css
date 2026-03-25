@@ -1,0 +1,14 @@
+.cadastro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: var(--spacing-lg);
+
+    .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+    }
+}

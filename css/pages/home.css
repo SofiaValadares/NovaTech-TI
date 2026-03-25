@@ -1,0 +1,152 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--spacing-lg);
+
+    .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .history {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--spacing-md);
+
+        .images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+            gap: 10px;
+            flex: 1;
+        }
+
+        .images img {
+            width: 100%;
+            height: auto;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .media {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .media iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 16px;
+            border: none;
+            overflow: hidden;
+        }
+    }
+
+    .services {
+        padding: 40px 20px;
+        text-align: center;
+
+        h2 {
+            margin-bottom: var(--spacing-lg);
+            color: var(--primary);
+        }
+
+        .carousel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-sm);
+
+            button {
+                width: 45px;
+                height: 45px;
+                border-radius: 50%;
+            }
+
+            .track-container {
+                overflow: hidden;
+                width: 900px;
+                max-width: 100%;
+                padding: var(--spacing-md);
+            }
+
+            .track {
+                display: flex;
+                transition: transform 0.4s ease-in-out;
+                gap: var(--spacing-md);
+
+                .card {
+                    min-width: 240px;
+                    max-width: 240px;
+                    background: var(--background);
+                    border-radius: 12px;
+                    box-shadow: var(--shadow);
+                    padding: 24px;
+                    flex-shrink: 0;
+                    text-align: center;
+
+                    h3 {
+                        margin: 12px 0;
+                        color: var(--primary);
+                    }
+
+                    p {
+                        color: var(--text);
+                        font-size: 14px;
+                        line-height: 1.5;
+                    }
+
+                    .material-icons .card-icon {
+                        font-size: 42px;
+                        color: var(--secondary);
+                    }
+                }
+            }
+        }
+    }
+
+    .fundadores {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+        text-align: center;
+
+        .tabela {
+            width: 70%;
+        }
+
+        .tabela td {
+            text-align: center;
+        }
+
+        .tabela img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .nome td {
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .cargo td {
+            color: var(--secondary);
+            font-weight: 500;
+        }
+
+        .descricao td {
+            font-size: 14px;
+            color: var(--text);
+        }
+    }
+}

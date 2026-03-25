@@ -1,0 +1,39 @@
+.header {
+    background: var(--background-dark);
+    color: var(--text-light);
+    padding: var(--spacing-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .logo {
+        height: 50px;
+        width: auto;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        gap: var(--spacing-md);
+    }
+
+    nav a {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-sm);
+        text-decoration: none;
+        color: var(--text-light);
+    }
+}
+
+.footer {
+    background: var(--background-dark);
+    color: var(--text-light);
+    text-align: center;
+    padding: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+}
