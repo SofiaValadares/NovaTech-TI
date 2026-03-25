@@ -39,7 +39,66 @@
             </div>
 
             <div class="input-group">
-                <input type="password-confirm" id="senha-confirmar" placeholder="Confirme sua senha">
+                <input type="password" id="senha-confirmar" placeholder="Confirme sua senha">
+            </div>
+
+            <div class="input-group">
+                <output id="senha-instrucoes">
+                    Regras para senha:
+                    <br>
+                    - Deve ter pelo menos 6 caracteres.
+                    <br>
+                    - Deve conter pelo menos 1 número, 1 letra maiúscula e 1 caractere especial permitido:
+                    <br>
+                    <strong>@ # $ % &amp; * ! ? / \ | - _ + . =</strong>
+                    <br>
+                    - Não são permitidos os seguintes caracteres:
+                    <br>
+                    <strong>¨ { } [ ] ´ ` ~ ^ : ; &lt; &gt; , “ ‘</strong>
+                </output>
+            </div>
+
+            <div class="input-group">
+                <label for="data-nascimento">Data de nascimento</label>
+                <input type="date" id="data-nascimento">
+            </div>
+
+            <div class="input-group">
+                <label for="telefone">Telefone / WhatsApp (opcional)</label>
+                <input type="tel" id="telefone" placeholder="(DDD) 9XXXX-XXXX">
+            </div>
+
+            <div class="input-group">
+                <label>Estado civil</label>
+                <div class="radio-group" role="radiogroup" aria-label="Estado civil">
+                    <label class="radio-option">
+                        <input type="radio" name="estado-civil" value="solteiro(a)" checked>
+                        Solteiro(a)
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="estado-civil" value="casado(a)">
+                        Casado(a)
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="estado-civil" value="divorciado(a)">
+                        Divorciado(a)
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="estado-civil" value="viúvo(a)">
+                        Viúvo(a)
+                    </label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="escolaridade">Escolaridade</label>
+                <select id="escolaridade">
+                    <option value="1º grau incompleto">1º grau incompleto</option>
+                    <option value="1º grau completo">1º grau completo</option>
+                    <option value="2º grau completo" selected>2º grau completo</option>
+                    <option value="nível superior">nível superior</option>
+                    <option value="pós-graduado">pós-graduado</option>
+                </select>
             </div>
 
             <div class="buttons-grup">
@@ -47,11 +106,14 @@
                 <button id="btn-voltar">Voltar</button>
                 <button class="limpar" id="btn-limpar">Limpar</button>
             </div>
+
+            <div id="cadastro-message" class="cadastro-message" role="alert" aria-live="polite"></div>
         </section>
     </main>
 
     <div id="footer-container"></div>
 
     <script src="/js/main.js"></script>
+    <script src="/js/pages/cadastro.js"></script>
 </body>
 </html>

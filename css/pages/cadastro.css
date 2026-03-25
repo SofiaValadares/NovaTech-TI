@@ -33,5 +33,59 @@
                 background: #da1011;
             }
         }
+
+        .cadastro-message {
+            margin-top: var(--spacing-sm);
+            text-align: center;
+            min-height: 1.2em;
+            font-weight: 600;
+        }
+
+        .cadastro-message[data-kind="error"] {
+            color: #da1011;
+        }
+
+        .cadastro-message[data-kind="success"] {
+            color: #0b7a3b;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xs);
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        /* select e output não são cobertos pelo CSS global (que estiliza apenas input) */
+        select {
+            padding: 12px 14px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: var(--background-secondary);
+            color: var(--text);
+            font-size: 14px;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(0, 102, 255, 0.2);
+            background: var(--background);
+        }
+
+        output {
+            padding: 12px 14px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: var(--background-secondary);
+            color: var(--text);
+            font-size: 14px;
+        }
     }
 }
