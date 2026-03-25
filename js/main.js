@@ -38,5 +38,28 @@ document.addEventListener("DOMContentLoaded", async () => {
     await loadComponent("header-container", "components/header.html");
     await loadComponent("footer-container", "components/footer.html");
 
+    adjustHeaderLinks();
     initCarousel(); // inicia o carrossel
 });
+
+function adjustHeaderLinks() {
+    const nav = document.querySelector(".header nav");
+    if (!nav) return;
+
+    const homeLink = nav.querySelector('a[href="index.html"]');
+    const loginLink = nav.querySelector('a[href="login.html"]');
+    const cadastroLink = nav.querySelector('a[href="cadastro.html"]');
+
+    const currentPage = window.location.pathname.split('/').pop().toLowerCase();
+    const isHome = !currentPage || currentPage === 'index.html';
+
+    if (isHome) {
+        if (homeLink) homeLink.style.display = 'none';
+        if (loginLink) loginLink.style.display = '';
+        if (cadastroLink) cadastroLink.style.display = '';
+    } else {
+        if (homeLink) homeLink.style.display = '';
+        if (loginLink) loginLink.style.display = 'none';
+        if (cadastroLink) cadastroLink.style.display = 'none';
+    }
+}
