@@ -33,7 +33,58 @@
 .footer {
     background: var(--background-dark);
     color: var(--text-light);
-    text-align: center;
-    padding: var(--spacing-sm);
+    text-align: left;
+    padding: var(--spacing-md);
     margin-top: var(--spacing-lg);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-section h2 {
+    margin-top: 0;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+}
+
+.footer-section li {
+    margin-bottom: 0.45rem;
+    line-height: 1.4;
+}
+
+.footer-section a {
+    color: var(--text-light);
+    text-decoration: underline;
+}
+
+.payment-methods {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+}
+
+.payment-methods li {
+    margin-bottom: 0.45rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.payment-methods li .material-icons {
+    font-size: 1rem;
+}
+
+.footer p {
+    margin: 0.2rem 0;
 }

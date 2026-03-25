@@ -55,6 +55,7 @@ function adjustHeaderLinks() {
     const homeLink = nav.querySelector('a[href="index.html"]');
     const loginLink = nav.querySelector('a[href="login.html"]');
     const cadastroLink = nav.querySelector('a[href="cadastro.html"]');
+    const solicitacaoLink = nav.querySelector('#solicitacao-link');
     const logoutLink = nav.querySelector('#logout-link');
 
     const currentPage = window.location.pathname.split('/').pop().toLowerCase();
@@ -66,11 +67,13 @@ function adjustHeaderLinks() {
         if (homeLink) homeLink.style.display = '';
         if (loginLink) loginLink.style.display = 'none';
         if (cadastroLink) cadastroLink.style.display = 'none';
+        if (solicitacaoLink) solicitacaoLink.style.display = '';
         if (logoutLink) logoutLink.style.display = '';
     } else {
         if (homeLink) homeLink.style.display = isHome ? 'none' : '';
         if (loginLink) loginLink.style.display = isHome ? '' : 'none';
         if (cadastroLink) cadastroLink.style.display = isHome ? '' : 'none';
+        if (solicitacaoLink) solicitacaoLink.style.display = 'none';
         if (logoutLink) logoutLink.style.display = 'none';
     }
 }

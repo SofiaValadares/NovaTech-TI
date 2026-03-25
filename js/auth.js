@@ -182,6 +182,25 @@
             });
             nav.appendChild(logoutLink);
         }
+
+        let welcomeSpan = nav.querySelector('#auth-welcome');
+        if (!welcomeSpan) {
+            welcomeSpan = document.createElement('span');
+            welcomeSpan.id = 'auth-welcome';
+            welcomeSpan.style.marginLeft = '0.5rem';
+            welcomeSpan.style.fontWeight = 'bold';
+            welcomeSpan.style.color = 'var(--text-light)';
+            nav.appendChild(welcomeSpan);
+        }
+
+        const currentUser = getCurrentUser();
+        if (isLoggedIn() && currentUser) {
+            welcomeSpan.textContent = 'Olá, ' + (currentUser.nome || currentUser.email || 'Usuário');
+            logoutLink.style.display = '';
+        } else {
+            welcomeSpan.textContent = '';
+            logoutLink.style.display = 'none';
+        }
     }
 
     window.Auth = {
