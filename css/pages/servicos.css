@@ -171,7 +171,7 @@
 .btn-primary {
     grid-column: 1 / -1;
     padding: 0.8rem 1.5rem;
-    background: var(--primary-color);
+    background: black;
     color: white;
     border: none;
     border-radius: 4px;
@@ -182,7 +182,7 @@
 }
 
 .btn-primary:hover {
-    background: var(--primary-dark);
+    background: #333333;
 }
 
 .servicos-message {
